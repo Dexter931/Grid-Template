@@ -1,0 +1,137 @@
+@font-face {
+    font-family: font1;
+    src: url(Fonts/PlaywriteCOGuides-Regular.ttf);
+}
+@keyframes Grow {
+    100%{transform: scale(1.5, 1.5);}
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+    'nav nav nav nav'
+    'aside body body body'
+    'aside body body body'
+    'aside more more more'
+    'footer footer footer footer'
+    ;
+    gap: 2rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    grid-area: nav;
+    background: linear-gradient(to right, white, black);
+    justify-content: space-between;
+    padding: 5px;
+}
+.header{
+    display: flex;
+}
+.header h1{
+    font-family: font1;
+    font-size: 50px;
+    font-weight: 5000;
+    color: black;
+}
+.header ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    list-style-type: none;
+}
+.header li a{
+    text-decoration: none;
+    gap: 0.5rem;
+    color: black;
+}
+.header li{
+    position: relative;
+}
+.header li a::before{
+    content: '';
+    width: 20%;
+    background: black;
+    height: 3px;
+    position: absolute;
+    bottom: 20%;
+    border-radius: 1rem;
+    transition: width 0.3s ease-in-out ;
+}
+.header li a:hover::before{
+    width: 100%;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background: black;
+    margin-right: 25px;
+    border-radius: 15px;
+    color: white;
+}
+button img{
+    height: 20px;
+}
+button:hover{
+    animation-name: Grow;
+    animation-duration: 3s;
+}
+.aside{
+    grid-area: aside;
+    background: gray;
+}
+.aside::first-letter{
+    font-size: 30px;
+    color: white;
+}
+.body{
+    grid-area: body;
+}
+.body::first-line{
+    font-size: 30px;
+}
+.more{
+    grid-area: more;
+    background: honeydew;
+}
+footer{
+    grid-area: footer;
+    background: slategrey;
+}
+@media screen and (max-width: 500px){
+    body{
+        background: white;
+    }
+        .container{
+        gap: 1rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        background: grey;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+    .header h1{
+        font-size: 40px;
+        font-weight: 100px;
+    }
+    .header ul{
+        text-align: center;
+    }
+    .every{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
