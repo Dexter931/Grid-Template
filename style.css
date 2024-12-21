@@ -101,7 +101,41 @@ footer{
     grid-area: footer;
     background: slategrey;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 768px){
+    body{
+        background: white;
+    }
+        .container{
+        gap: 1rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        background: grey;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+    .header h1{
+        font-size: 40px;
+        font-weight: 100px;
+    }
+    .header ul{
+        text-align: center;
+    }
+    .every{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 768px)and (max-width: 995px) {
     body{
         background: white;
     }
